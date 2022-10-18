@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <title th:value="${'Редактирование статьи '+book.marca}"></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+ <form th:action="${'/mashina/edit/'+book.id}" method="post">
+  <label>
+    марка
+    <input type="text" name="marca" placeholder="ведите марку" th:value="${book.marca}">
+  </label>
+  <br>
+  <label>
+    год создания
+    <input type="date" name="godsodania" placeholder="гот создания" th:value="${godsodania}">
+  </label>
+  <br>
+  <label>
+    импорт
+    <input type="checkbox" name="impor" placeholder="импорт" th:checked="${book.impor}">
+      <input type="hidden" name="impor" value="0" >
+  </label>
+  <br>
+  <label>
+    обьем
+    <input type="number" name="obem" placeholder="обьем двигла" th:value="${book.obem}">
+  </label>
+  <br><label>
+  литры
+  <input type="number" step="0.1" name="litrs" placeholder="литры" th:value="${book.litrs}">
+  <br>
+  <button type="submit">Сохранить</button>
+
+ </form>
+
+</body>
+</html>

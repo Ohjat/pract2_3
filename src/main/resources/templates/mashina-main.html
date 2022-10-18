@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <title>машина</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>все машины</h1>
+<a href="/mashina/filter">Поиск автомобиля</a>
+<a href="/mashina/add">Добавить автомобиль</a>
+
+<div th:each="el : ${authors}">
+  <h3 th:text="${el.marca}"></h3>
+  <p th:text="${el.godsodania}"></p>
+  <a th:href="'/mashina/edit/'+${el.id}">Редактор автомобиль</a>
+  <a th:href="'/mashina/show/'+${el.id}">Просмотр автомобиль</a>
+  <a th:href="'/mashina/del/'+${el.id}">Удаление автомобиль</a>
+</div>
+</body>
+</html>

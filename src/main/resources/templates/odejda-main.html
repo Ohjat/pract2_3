@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <title>одеда</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Все одежды</h1>
+<a href="/odejda/filter">Поиск автора</a>
+<a href="/odejda/add">Добавить автора</a>
+<div th:each="el : ${authors}">
+  <h3 th:text="${el.tip}"></h3>
+  <p th:text="${el.gotvipuska}"></p>
+  <a th:href="'/odejda/edit/'+${el.id}">Редактор автомобиль</a>
+  <a th:href="'/odejda/show/'+${el.id}">Просмотр автомобиль</a>
+  <a th:href="'/odejda/del/'+${el.id}">Удаление автомобиль</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <title>Добавление автомобиля</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<form th:action="${'/mashina/add'}" method="post">
+  <label>
+    марка
+    <input type="text" name="marca" placeholder="ведите марку">
+  </label>
+  <br>
+  <label>
+    год создания
+    <input type="date" name="godsodania" placeholder="гот создания">
+  </label>
+  <br>
+  <label>
+    импорт
+    <input type="checkbox" name="impor" placeholder="импорт">
+    <input type="hidden" name="impor" value="0" >
+  </label>
+  <br>
+  <label>
+    обьем
+    <input type="number" name="obem" placeholder="обьем двигла">
+  </label>
+  <br><label>
+  литры
+  <input type="number" step="0.1" name="litrs" placeholder="литры">
+
+</label>
+  <br>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+          type="submit">Добавить автомобиль</button>
+</form>
+</body>
+</html>
